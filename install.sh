@@ -10,6 +10,7 @@ git clone git@github.com:bjulian5/anvs.git .
 ALREADY_SOURCED=$(cat ~/.bash_profile | grep -o 'source ~/.anvs/anvs.sh')
 
 if [[ -z "$ALREADY_SOURCED" ]]; then
+  echo "Adding to ~/bash_profile"
   echo "source ~/.anvs/anvs.sh" >> ~/.bash_profile
 fi
 
