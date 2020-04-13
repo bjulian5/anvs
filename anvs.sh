@@ -36,7 +36,7 @@ _load_nodeversion() {
       nvm use default
     else
       NODE_VERSION=$(echo $NODE_VERSION_STRING | grep -m 1 -o '\([0-9]\+\.\{0,1\}\)\+')
-      nvm use $nversion || (echo "Version $nversion is not yet installed." && nvm install $nversion) || (echo "Something went wrong when trying to use $NODE_VERSION. Using your default version for now" && nvm use default)
+      nvm use $NODE_VERSION || (echo "Version $NODE_VERSION is not yet installed." && nvm install $NODE_VERSION) || (echo "Something went wrong when trying to use $NODE_VERSION. Using your default version for now" && nvm use default)
     fi
   elif [[ $(nvm version) != $(nvm version default)  ]]; then
     echo "Reverting to nvm default version"
